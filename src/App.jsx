@@ -4,14 +4,16 @@ import Contact from './components/Contact'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
 import Fixed from './components/Fixed'
+import Los from './components/Los'
 
 const App = () => {
   return (
     <div>
       <Nav />
       <Hero />
-      {/* <Contact /> */}
-      {/* <Fixed /> */}
+      <Contact />
+      <Fixed />
+      <Los/>
       {/* <Footer /> */}
     </div>
   )

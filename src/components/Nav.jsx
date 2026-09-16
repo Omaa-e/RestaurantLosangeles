@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import logo from '../assets/logo.avif'
 import { VscMenu } from "react-icons/vsc"
 import { VscClose } from "react-icons/vsc"
@@ -6,41 +6,58 @@ import { VscClose } from "react-icons/vsc"
 const Nav = () => {
   const [nav, setNav] = useState(false)
   const handleClick = () => setNav(!nav)
+  const [isScrolled, setIsScrolled] =useState(false)
+    
+    useEffect(()=> {
+        const handleScroll = ()=>{
+            if (window.scrollY > 0){
+                setIsScrolled(true)
+            } else{
+                setIsScrolled(false)
+            }
+        }
+        window.addEventListener("scroll", handleScroll)
+ 
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+
+    }, [])
 
   return (
-    <div className='w-full text-black fixed top-0 left-0 z-50'>
-      <div className='mx-auto text-center lg:px-15 xl:px-20 border-b border-white'>
+    <div className='w-full text-black fixed top-0 left-0 z-50 ${isScrolled ? "bg-white" : "bg-green"}'>
+      <div className='mx-auto text-center px-12 lg:px-16  xl:pr-18 border-b border-white'>
 
         {/* Large screens */}
         <div className='hidden md:grid grid-cols-3 items-center md:h-13.5 xl:h-[4.5rem] '>
           {/* Left Links */}
-          <div className='flex items-center space-x-4'>
-            <a href="" className='font-bold text-sm my-3 mr-8  hover:underline text-white'>
+          <div className='flex items-center'>
+            <a href="" className='font-bold md:text-xs my-3 mr-4 lg:mr-6  hover:underline text-white'>
               about
             </a>
-            <a href="" className='font-bold text-sm my-3 mx-8 hover:underline text-white'>
+            <a href="" className='font-bold md:text-xs my-3 mx-4  lg:mx-7 hover:underline text-white'>
               private dining
             </a>
-            <a href="" className='font-bold text-sm my-3 mx-8  hover:underline text-white'>
+            <a href="" className='font-bold md:text-xs my-3 mx-4  lg:mx-6 hover:underline text-white'>
               menu
             </a>
            
           </div>
 
-          {/* Logo — centered by sitting in the middle grid column */}
+           {/* Logo — centered by sitting in the middle grid */}
           <div className='flex justify-center items-center'>
-            <img className="h-8 object-cover" src={logo} alt="logo" />
+            <img className="md:h-5 lg:h-8 object-cover" src={logo} alt="logo" />
           </div>
 
           {/* Right Links */}
-          <div className='flex items-center justify-end space-x-4'>
-            <a href="" className='text-sm font-bold p-5 hover:underline text-white'>
+          <div className='flex items-center justify-end'>
+            <a href="" className='md:text-xs font-bold my-3 mx-4  lg:ml-8 hover:underline text-white'>
               contact
             </a>
-            <a href="" className='font-bold text-sm p-5 hover:underline text-white'>
+            <a href="" className='font-bold md:text-xs my-3 mx-4  lg:mx-8 hover:underline text-white'>
               to-go
             </a>
-            <a href="" className='font-bold text-sm p-5 hover:underline text-white'>
+            <a href="" className='font-bold md:text-xs my-3 mx-4  lg:mx-8 hover:underline text-white'>
               reserve
             </a>
           </div>
