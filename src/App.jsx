@@ -5,6 +5,8 @@ import Hero from './components/Hero'
 import Footer from './components/Footer'
 import Fixed from './components/Fixed'
 import Los from './components/Los'
+import Reservation from './components/Reservation'
+import Happenings from './components/Happenings'
 
 const App = () => {
   return (
@@ -14,7 +16,9 @@ const App = () => {
       <Contact />
       <Fixed />
       <Los/>
-      {/* <Footer /> */}
+      <Reservation/>
+      <Happenings/>
+      <Footer />
     </div>
   )
 }
