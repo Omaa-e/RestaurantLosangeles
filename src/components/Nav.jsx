@@ -25,7 +25,11 @@ const Nav = () => {
     }, [])
 
   return (
-    <div className='w-full text-black fixed top-0 left-0 z-50 ${isScrolled ? "bg-white" : "bg-green"}'>
+    <div
+  className={`w-full fixed top-0 left-0 z-50 transition-colors duration-300 ${
+    isScrolled ? 'bg-[#757263]' : 'bg-transparent'
+  }`}
+>
       <div className='mx-auto text-center px-12 lg:px-16  xl:pr-18 border-b border-white'>
 
         {/* Large screens */}

@@ -6,12 +6,12 @@ const Los = () => {
   return (
     <div className=' px-7 py-20 '>
         <div className='mx-auto flex flex-col lg:flex-row justify-center items-center lg:gap-10  '>
-            <div className='flex gap-2 '>
-                <div>
-                    <img src={los1} className=' object-cover w-200 h-80' alt="" />
+            <div className='flex justify-around gap-2 '>
+                <div className="min-w-[200px] h-[320px] mr-[10px]">
+                    <img src={los1} className=' object-cover min-w-[200px] object-cover max-w-[100%]' alt="" />
                 </div>
-                <div>
-                    <img src={los2} className=' object-cover w-200 h-80' alt="" />
+                <div className="min-w-[200px] h-[320px]">
+                    <img src={los2} className=' object-cover min-w-[200px] object-cover max-w-[100%]' alt="" />
                 </div>
             </div>
             <div className='lg:max-w-md gap-4 pb-11'>

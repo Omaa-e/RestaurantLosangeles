@@ -11,7 +11,7 @@ const Reservation = () => {
       />
       <div className='absolute inset-0 bg-white/30'></div>
       <div className='absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10'>
-        <h1 className='text-3xl font-bold mb-4'>
+        <h1 className='text-3xl font-semibold mb-4'>
           make a reservation
         </h1>
         <a
